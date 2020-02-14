@@ -2,11 +2,11 @@ import React, { Component } from "react";
 
 //const imageSrc =
 //  "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/";
-const imageSrcSec =
-  "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/";
 
 class Pokecard extends Component {
   render() {
+    const imageSrcSec =
+      "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/";
     const { name, type, exp, id } = this.props;
     const idExt = num => {
       num < 100 ? (num = `00${id}`.slice(-3)) : (num = id);
