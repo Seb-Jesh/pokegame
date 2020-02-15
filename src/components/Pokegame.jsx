@@ -23,17 +23,29 @@ class Pokegame extends Component {
       let pokemon = Pokedex1.splice(idx, 1)[0];
       Pokedex2.push(pokemon);
     }
-    console.log(Pokedex1);
-    console.log(Pokedex2);
+    const Pokedex1Total = Pokedex1.map(exp => {
+      return exp.base_experience;
+    });
+    const Pokedex2Total = Pokedex2.map(exp => {
+      return exp.base_experience;
+    });
+
+    let pokedexSum1 = Pokedex1Total.reduce((a, b) => a + b, 0);
+    let pokedexSum2 = Pokedex2Total.reduce((a, b) => a + b, 0);
+
     return (
       <div>
         <h1>POKEDEX</h1>
         <div>
           <h6>POKEDEX 1</h6>
+          <h6>Total exp = {pokedexSum1}</h6>
+          <h6>{pokedexSum1 > pokedexSum2 ? "WINNER!!!" : "LOSER!"}</h6>
           <Pokedex pokedex={Pokedex1} />
         </div>
         <div>
           <h6>POKEDEX 2</h6>
+          <h6>Total exp = {pokedexSum2}</h6>
+          <h6>{pokedexSum2 > pokedexSum1 ? "WINNER!!!" : "LOSER!"}</h6>
           <Pokedex pokedex={Pokedex2} />
         </div>
       </div>
