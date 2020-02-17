@@ -32,6 +32,14 @@ h6 {
   box-shadow: 7px 10px 12px -5px rgba(0, 0, 0, 0.56);
 }
 
+.pokecard img:hover {
+  transform: scale(1.25);
+}
+
+.pokecard img {
+  transition: 500ms;
+}
+
 .Pokedex-cards {
   display: flex;
   justify-content: space-evenly;
@@ -40,4 +48,12 @@ h6 {
 
 .Pokecard-name {
   color: purple;
+}
+
+.winner {
+  color: green;
+}
+
+.loser {
+  color: red;
 }
