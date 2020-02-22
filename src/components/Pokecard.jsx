@@ -9,9 +9,14 @@ class Pokecard extends Component {
       "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/";
     const { name, type, exp, id } = this.props;
     const idExt = num => {
-      num < 100 ? (num = `00${id}`.slice(-3)) : (num = id);
+      num = `00${id}`.slice(-3);
       return num;
     };
+    //const exten = ext => {
+    //  ext = `${id}`.padStart(3, "0");
+    //  return ext;
+    //};
+
     return (
       <div className="pokecard">
         <h3 className="Pokecard-name">{name}</h3>
